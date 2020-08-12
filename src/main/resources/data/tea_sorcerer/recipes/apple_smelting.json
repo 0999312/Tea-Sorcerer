@@ -1,0 +1,10 @@
+{
+  "result": {
+    "item": "minecraft:apple"
+  },
+  "ingredient": {
+    "item": "tea_sorcerer:tea_leaves"
+  },
+  "type": "minecraft:smelting",
+  "experience": 0.5
+}

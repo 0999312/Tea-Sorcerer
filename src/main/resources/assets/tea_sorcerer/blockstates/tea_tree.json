@@ -1,0 +1,16 @@
+{
+   "variants" : {
+      "age=0" : {
+         "model" : "tea_sorcerer:block/teatree_1"
+      },
+      "age=1" : {
+         "model" : "tea_sorcerer:block/teatree_2"
+      },
+      "age=2" : {
+         "model" : "tea_sorcerer:block/teatree_3"
+      },
+      "age=3" : {
+         "model" : "tea_sorcerer:block/teatree_4"
+      }
+   }
+}

@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "tea_sorcerer:tea_leaves",
+    "count": 4
+  },
+  "ingredients": [
+    {
+      "tag": "forge:crops/wheat"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

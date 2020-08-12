@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "tea_sorcerer:blocks/rice_root"
+    }
+}

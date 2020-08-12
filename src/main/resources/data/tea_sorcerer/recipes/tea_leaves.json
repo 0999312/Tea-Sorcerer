@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "tea_sorcerer:tea_leaves"
+  },
+  "pattern": [
+    "OOO",
+    "OOO",
+    "OBO"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:bookshelf"
+    },
+    "O": {
+      "tag": "forge:crops/potato"
+    }
+  }
+}
