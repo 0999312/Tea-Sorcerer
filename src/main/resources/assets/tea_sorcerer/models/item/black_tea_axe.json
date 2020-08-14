@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "tea_sorcerer:items/black_tea_axe"
+  }
+}

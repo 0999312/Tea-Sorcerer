@@ -23,7 +23,7 @@ public class SpiritCapabilityProvider implements ICapabilityProvider, INBTSerial
 	@Nonnull
 	ISpiritCapability getOrCreateCapability() {
 		if (spiritCapability == null) {
-			this.spiritCapability = new SpiritCapability(0,1000,1000);
+			this.spiritCapability = new SpiritCapability(1,1000,1000);
 		}
 		return this.spiritCapability;
 	}

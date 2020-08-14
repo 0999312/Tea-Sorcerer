@@ -1,0 +1,8 @@
+{
+  "replace": "false",
+  "values": [
+    "tea_sorcerer:green_tea_ingot",
+    "tea_sorcerer:rice_tea_ingot",
+    "tea_sorcerer:black_tea_ingot"
+  ]
+}

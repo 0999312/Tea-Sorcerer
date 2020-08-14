@@ -14,12 +14,12 @@ import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
 
-public class BeamRender extends EntityRenderer<BeamEntity> {
-    private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/beam_red.png");
+public class MatchaBeamRender extends EntityRenderer<BeamEntity> {
+    private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/beam.png");
     private static final RenderType field_229123_e_ = RenderType.getEntityTranslucent(TEXTURES);
 
 
-    public BeamRender(EntityRendererManager renderManager) {
+    public MatchaBeamRender(EntityRendererManager renderManager) {
         super(renderManager);
     }
 

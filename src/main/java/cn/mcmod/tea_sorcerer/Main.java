@@ -3,6 +3,7 @@ package cn.mcmod.tea_sorcerer;
 import cn.mcmod.tea_sorcerer.register.BlockRegistry;
 import cn.mcmod.tea_sorcerer.register.ItemRegistry;
 import cn.mcmod.tea_sorcerer.register.MainRegistry;
+import cn.mcmod.tea_sorcerer.util.JSON_Creator;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
@@ -13,7 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Main.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD,modid = Main.MODID)
 public class Main {
@@ -27,17 +27,16 @@ public class Main {
 		}
 	};
     public Main() {
-        //通过方法引用注册监听器
     	FMLJavaModLoadingContext.get().getModEventBus().register(MainRegistry.getInstance());
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverSetup);
         new BlockRegistry();
         new ItemRegistry();
+//        new EntityRegistry();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        //TODO: 一些需要同时在物理服务端和客户端完成的任务.
     	MainRegistry.getInstance().clearAll();
     }
 
@@ -45,10 +44,10 @@ public class Main {
     	RenderTypeLookup.setRenderLayer(BlockRegistry.RICE_CROP, RenderType.getCutoutMipped());
      	RenderTypeLookup.setRenderLayer(BlockRegistry.RICE_ROOT, RenderType.getCutoutMipped());
      	RenderTypeLookup.setRenderLayer(BlockRegistry.TEA_TREE, RenderType.getCutoutMipped());
+     	JSON_Creator.genTagForItems("tea", new ItemStack(ItemRegistry.green_tea_drink), new ItemStack(ItemRegistry.rice_tea_ingot), new ItemStack(ItemRegistry.black_tea_ingot));
     }
     
     private void serverSetup(final FMLDedicatedServerSetupEvent event) {
-        //TODO: 一些只需要在物理服务端完成的任务.
     }
 
 }

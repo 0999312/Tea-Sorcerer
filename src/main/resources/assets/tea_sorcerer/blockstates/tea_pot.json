@@ -1,0 +1,19 @@
+{
+   "variants" : {
+      "facing=north" : {
+         "model" : "tea_sorcerer:item/tea_pot",
+         "y" : 270
+      },
+      "facing=south" : {
+         "model" : "tea_sorcerer:item/tea_pot",
+         "y" : 90
+      },
+      "facing=west" : {
+         "model" : "tea_sorcerer:item/tea_pot",
+         "y" : 180
+      },
+      "facing=east" : {
+         "model" : "tea_sorcerer:item/tea_pot"
+      }
+   }
+}

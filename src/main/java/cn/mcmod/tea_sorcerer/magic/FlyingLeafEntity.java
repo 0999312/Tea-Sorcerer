@@ -22,22 +22,22 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class FukumameEntity extends ThrowableEntity {
+public class FlyingLeafEntity extends ThrowableEntity {
     private Entity ignoreEntity;
 
-    public FukumameEntity(EntityType<? extends FukumameEntity> p_i50159_1_, World p_i50159_2_) {
+    public FlyingLeafEntity(EntityType<? extends FlyingLeafEntity> p_i50159_1_, World p_i50159_2_) {
         super(p_i50159_1_, p_i50159_2_);
     }
     
-    public FukumameEntity(World worldIn, LivingEntity throwerIn) {
+    public FlyingLeafEntity(World worldIn, LivingEntity throwerIn) {
         super(EntityRegistry.FLYING_LEAF, throwerIn, worldIn);
     }
 
-    public FukumameEntity(World worldIn, double x, double y, double z) {
+    public FlyingLeafEntity(World worldIn, double x, double y, double z) {
         super(EntityRegistry.FLYING_LEAF, x, y, z, worldIn);
     }
 
-    public FukumameEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
+    public FlyingLeafEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
         this(EntityRegistry.FLYING_LEAF, world);
     }
 

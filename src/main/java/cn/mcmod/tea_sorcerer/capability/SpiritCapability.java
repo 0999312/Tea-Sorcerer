@@ -26,7 +26,7 @@ public class SpiritCapability implements ISpiritCapability {
 
     @Override
     public void deserializeNBT(CompoundNBT nbt) {
-        this.level = nbt.getInt("level");
+        this.level = nbt.getInt("spirit_level");
         this.amount = nbt.getInt("spirit_amount");
         this.max_amount = nbt.getInt("spirit_max_amount");
         this.last_action_timer = nbt.getInt("spirit_last_action_timer");
@@ -44,13 +44,11 @@ public class SpiritCapability implements ISpiritCapability {
 
 	@Override
 	public void setSpiritLevel(int level) {
-//		if((this.getSpiritLevel() + level) > 5) this.level = 5;
 		this.level = level;
 	}
 
 	@Override
 	public void setSpiritAmount(int amount) {
-//		if((this.getSpiritAmount() + amount) > getMaxSpiritAmount()) this.amount = getMaxSpiritAmount();
 		this.amount = amount;
 	}
 

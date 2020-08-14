@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import cn.mcmod.tea_sorcerer.Main;
-import cn.mcmod.tea_sorcerer.magic.FukumameEntity;
+import cn.mcmod.tea_sorcerer.magic.FlyingLeafEntity;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -17,10 +17,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class FukumameRender<T extends FukumameEntity> extends EntityRenderer<T> {
+public class FlyingLeafRender<T extends FlyingLeafEntity> extends EntityRenderer<T> {
     private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/fukumame.png");
 
-    public FukumameRender(EntityRendererManager renderManagerIn) {
+    public FlyingLeafRender(EntityRendererManager renderManagerIn) {
         super(renderManagerIn);
     }
 
