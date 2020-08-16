@@ -72,7 +72,7 @@ public class FlyingLeafEntity extends ThrowableEntity {
                 return;
             }
 
-            entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float) 2);
+            entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()).setDamageBypassesArmor().setMagicDamage(), (float) 5);
 
             entity.hurtResistantTime = 5;
 

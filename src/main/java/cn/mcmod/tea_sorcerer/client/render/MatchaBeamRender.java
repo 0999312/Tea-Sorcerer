@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import cn.mcmod.tea_sorcerer.Main;
-import cn.mcmod.tea_sorcerer.magic.BeamEntity;
+import cn.mcmod.tea_sorcerer.magic.MatchaBeamEntity;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -14,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
 
-public class MatchaBeamRender extends EntityRenderer<BeamEntity> {
+public class MatchaBeamRender extends EntityRenderer<MatchaBeamEntity> {
     private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/beam.png");
     private static final RenderType field_229123_e_ = RenderType.getEntityTranslucent(TEXTURES);
 
@@ -23,7 +23,7 @@ public class MatchaBeamRender extends EntityRenderer<BeamEntity> {
         super(renderManager);
     }
 
-    public void render(BeamEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+    public void render(MatchaBeamEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
         matrixStackIn.push();
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90.0F));
         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch)));
@@ -61,13 +61,14 @@ public class MatchaBeamRender extends EntityRenderer<BeamEntity> {
     }
 
     @Override
-    protected int getBlockLight(BeamEntity entityIn, float partialTicks) {
+    protected int getBlockLight(MatchaBeamEntity entityIn, float partialTicks) {
         return MathHelper.clamp(super.getBlockLight(entityIn, partialTicks) + 8, 0, 15);
     }
 
     @Nullable
     @Override
-    public ResourceLocation getEntityTexture(BeamEntity entity) {
+    public ResourceLocation getEntityTexture(MatchaBeamEntity entity) {
         return TEXTURES;
     }
+
 }

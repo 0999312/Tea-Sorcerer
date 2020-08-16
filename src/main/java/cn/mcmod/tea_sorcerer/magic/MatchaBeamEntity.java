@@ -39,7 +39,7 @@ public class MatchaBeamEntity extends AbstractFireballEntity {
     public MatchaBeamEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
         this(EntityRegistry.MATCHA_BEAM, world);
     }
-
+   
     /**
      * Called when this EntityFireball hits a block or entity.
      */
@@ -107,6 +107,11 @@ public class MatchaBeamEntity extends AbstractFireballEntity {
         return false;
     }
 
+    @Override
+    public void setRotation(float yaw, float pitch) {
+    	super.setRotation(yaw, pitch);
+    }
+    
     @OnlyIn(Dist.CLIENT)
     @Override
     public void setPositionAndRotationDirect(double x, double y, double z, float yaw, float pitch, int posRotationIncrements, boolean teleport) {

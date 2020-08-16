@@ -37,7 +37,6 @@ public final class MainRegistry {
 	@SubscribeEvent
 	public void registerItems(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(ITEMS.toArray(new Item[0]));
-//		JSON_Creator.genLangForItems(ITEMS.toArray(new Item[0]));
 	}
 
 	@SubscribeEvent

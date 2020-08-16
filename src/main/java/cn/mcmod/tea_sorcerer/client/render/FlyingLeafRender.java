@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
 public class FlyingLeafRender<T extends FlyingLeafEntity> extends EntityRenderer<T> {
-    private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/fukumame.png");
+    private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/leaf.png");
 
     public FlyingLeafRender(EntityRendererManager renderManagerIn) {
         super(renderManagerIn);

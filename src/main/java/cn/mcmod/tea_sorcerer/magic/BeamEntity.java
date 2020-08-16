@@ -107,6 +107,11 @@ public class BeamEntity extends AbstractFireballEntity {
         return false;
     }
 
+    @Override
+    public void setRotation(float yaw, float pitch) {
+    	super.setRotation(yaw, pitch);
+    }
+    
     @OnlyIn(Dist.CLIENT)
     @Override
     public void setPositionAndRotationDirect(double x, double y, double z, float yaw, float pitch, int posRotationIncrements, boolean teleport) {

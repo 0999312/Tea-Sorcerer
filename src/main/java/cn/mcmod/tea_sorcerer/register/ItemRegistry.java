@@ -2,7 +2,9 @@ package cn.mcmod.tea_sorcerer.register;
 
 import cn.mcmod.tea_sorcerer.Main;
 import cn.mcmod.tea_sorcerer.crop.SeedRice;
+import cn.mcmod.tea_sorcerer.magic.BookFlyingLeaf;
 import cn.mcmod.tea_sorcerer.magic.ItemMagicInfo;
+import cn.mcmod.tea_sorcerer.magic.ItemMatchaLaserBow;
 import cn.mcmod.tea_sorcerer.magic.ScrollFire;
 import cn.mcmod.tea_sorcerer.magic.ScrollWood;
 import cn.mcmod.tea_sorcerer.tea.DrinkTeaBase;
@@ -140,12 +142,17 @@ public class ItemRegistry extends ObjectRegistry {
             }
             return 0;
         }
-    };
-	
+    };	
 	public static Item tea_seed = new BlockItem(BlockRegistry.TEA_TREE, new Properties().group(Main.TS_GROUP))
 			.setRegistryName(Main.MODID, "tea_seed");
 	public static Item rice_seed = new SeedRice(BlockRegistry.RICE_CROP, new Properties().group(Main.TS_GROUP))
 			.setRegistryName(Main.MODID, "rice_seed");
+	public static Item marguerite = new BlockItem(BlockRegistry.marguerite, new Properties().group(Main.TS_GROUP))
+			.setRegistryName(Main.MODID, "marguerite");
+	public static Item radiata = new BlockItem(BlockRegistry.radiata, new Properties().group(Main.TS_GROUP))
+			.setRegistryName(Main.MODID, "radiata");
+	public static Item sambac = new BlockItem(BlockRegistry.sambac, new Properties().group(Main.TS_GROUP))
+			.setRegistryName(Main.MODID, "sambac");
 	public static Item straw = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID, "straw");
 	public static Item tea_leaves = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"tea_leaves");
@@ -215,7 +222,7 @@ public class ItemRegistry extends ObjectRegistry {
 	
 	public static Item seven_magic_book = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"seven_magic_book");
-	public static Item leaf_danmaku_magic_book = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
+	public static Item leaf_danmaku_magic_book = new BookFlyingLeaf(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"leaf_danmaku_magic_book");
 	public static Item beam_danmaku_magic_book = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"beam_danmaku_magic_book");
@@ -388,7 +395,8 @@ public class ItemRegistry extends ObjectRegistry {
 			"black_tea_ingot");
 	public static Item rice_tea_ingot = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"rice_tea_ingot");
-	
+	public static Item tea_knife = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
+			"tea_knife");
 	public static Item BLACK_TEA_SWORD = new SwordItem(TEA_INGOT, 5, -2F, new Properties().maxStackSize(1).group(Main.TS_GROUP))
 			.setRegistryName(Main.MODID, "black_tea_sword");
 	public static Item BLACK_TEA_AXE = new AxeItem(TEA_INGOT, 8F, -3F, new Properties().maxStackSize(1).group(Main.TS_GROUP))
@@ -411,4 +419,6 @@ public class ItemRegistry extends ObjectRegistry {
 	
 	public static Item flower_tea_sign = new Item(new Properties().maxStackSize(1).group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"flower_tea_sign");
+	public static Item matcha_laser_bow = new ItemMatchaLaserBow(new Properties().maxStackSize(1).group(Main.TS_GROUP)).setRegistryName(Main.MODID,
+			"matcha_laser_bow");
 }

@@ -1,13 +1,19 @@
 package cn.mcmod.tea_sorcerer;
 
+import cn.mcmod.tea_sorcerer.client.render.BeamRender;
+import cn.mcmod.tea_sorcerer.client.render.FlyingLeafRender;
+import cn.mcmod.tea_sorcerer.client.render.MatchaBeamRender;
+import cn.mcmod.tea_sorcerer.magic.FlyingLeafEntity;
 import cn.mcmod.tea_sorcerer.register.BlockRegistry;
+import cn.mcmod.tea_sorcerer.register.EntityRegistry;
 import cn.mcmod.tea_sorcerer.register.ItemRegistry;
 import cn.mcmod.tea_sorcerer.register.MainRegistry;
-import cn.mcmod.tea_sorcerer.util.JSON_Creator;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,7 +26,6 @@ public class Main {
 	public static final String MODID = "tea_sorcerer";
 	
 	public static final ItemGroup TS_GROUP = new ItemGroup(Main.MODID) {
-		
 		@Override
 		public ItemStack createIcon() {
 			return new ItemStack(ItemRegistry.green_tea_leaves);
@@ -33,7 +38,7 @@ public class Main {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverSetup);
         new BlockRegistry();
         new ItemRegistry();
-//        new EntityRegistry();
+        new EntityRegistry();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -44,7 +49,20 @@ public class Main {
     	RenderTypeLookup.setRenderLayer(BlockRegistry.RICE_CROP, RenderType.getCutoutMipped());
      	RenderTypeLookup.setRenderLayer(BlockRegistry.RICE_ROOT, RenderType.getCutoutMipped());
      	RenderTypeLookup.setRenderLayer(BlockRegistry.TEA_TREE, RenderType.getCutoutMipped());
-     	JSON_Creator.genTagForItems("tea", new ItemStack(ItemRegistry.green_tea_drink), new ItemStack(ItemRegistry.rice_tea_ingot), new ItemStack(ItemRegistry.black_tea_ingot));
+     	
+    	RenderTypeLookup.setRenderLayer(BlockRegistry.marguerite, RenderType.getCutoutMipped());
+     	RenderTypeLookup.setRenderLayer(BlockRegistry.radiata, RenderType.getCutoutMipped());
+     	RenderTypeLookup.setRenderLayer(BlockRegistry.sambac, RenderType.getCutoutMipped());
+     	
+     	RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.MATCHA_BEAM,  (EntityRendererManager manager) -> {
+            return new MatchaBeamRender(manager);
+        });
+     	RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.BEAM, (EntityRendererManager manager) -> {
+     		return new BeamRender(manager);
+     	});
+     	RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.FLYING_LEAF, (EntityRendererManager manager) -> {
+     		return new FlyingLeafRender<FlyingLeafEntity>(manager);
+     	});
     }
     
     private void serverSetup(final FMLDedicatedServerSetupEvent event) {
