@@ -1,7 +1,6 @@
 package cn.mcmod.tea_sorcerer.tea;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
@@ -17,7 +16,7 @@ import javax.annotation.Nullable;
 
 import cn.mcmod.tea_sorcerer.register.BlockRegistry;
 
-public class TileEntityPlate extends TileEntity implements ITickable {
+public class TileEntityPlate extends TileEntity {
     public TileEntityPlate() {
 		super(BlockRegistry.PLATE_TE);
 	}
@@ -64,9 +63,7 @@ public class TileEntityPlate extends TileEntity implements ITickable {
 	public void readPacketNBT(CompoundNBT cmp) {
         inventory.deserializeNBT(cmp.getCompound("Inventory"));
 	}
-	@Override
-	public void tick() {
-	}
+
 	@Override
 	public void read(CompoundNBT compound) {
 		readPacketNBT(compound);

@@ -29,6 +29,7 @@ public class CommonEventRegistry {
 		}
 	}
 
+
 	@SubscribeEvent
 	public static void onPlayerTick(LivingUpdateEvent event) {
 		if (event.getEntityLiving() instanceof PlayerEntity) {

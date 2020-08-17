@@ -11,9 +11,12 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
+@OnlyIn(Dist.CLIENT)
 public class BeamRender extends EntityRenderer<BeamEntity> {
     private static final ResourceLocation TEXTURES = new ResourceLocation(Main.MODID, "textures/entity/beam_red.png");
     private static final RenderType field_229123_e_ = RenderType.getEntityTranslucent(TEXTURES);
