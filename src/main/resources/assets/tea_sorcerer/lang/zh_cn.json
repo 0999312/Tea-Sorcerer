@@ -1,6 +1,7 @@
 {
    "itemGroup.tea_sorcerer" : "茶叶魔法使",
-      "block.tea_sorcerer.marguerite" : "木春菊",
+   "block.tea_sorcerer.marguerite" : "木春菊",
+   "block.tea_sorcerer.plate" : "白瓷盘",
    "block.tea_sorcerer.radiata" : "彼岸花",
    "block.tea_sorcerer.sambac" : "茉莉花",
    "block.tea_sorcerer.tea_tree" : "茶籽",

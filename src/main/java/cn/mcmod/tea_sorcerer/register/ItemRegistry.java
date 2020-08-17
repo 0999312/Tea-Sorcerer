@@ -153,6 +153,7 @@ public class ItemRegistry extends ObjectRegistry {
 			.setRegistryName(Main.MODID, "radiata");
 	public static Item sambac = new BlockItem(BlockRegistry.sambac, new Properties().group(Main.TS_GROUP))
 			.setRegistryName(Main.MODID, "sambac");
+	
 	public static Item straw = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID, "straw");
 	public static Item tea_leaves = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID,
 			"tea_leaves");
@@ -161,6 +162,8 @@ public class ItemRegistry extends ObjectRegistry {
 			"brown_rice");
 	public static Item tea_pot = new BlockItem(BlockRegistry.TEA_POT, new Properties().group(Main.TS_GROUP))
 			.setRegistryName(Main.MODID, "tea_pot");
+	public static Item plate = new BlockItem(BlockRegistry.PLATE, new Properties().group(Main.TS_GROUP))
+			.setRegistryName(Main.MODID, "plate");
 	public static Item cup = new Item(new Properties().group(Main.TS_GROUP)).setRegistryName(Main.MODID, "cup");
 	public static Item tea_cauldron = new BlockItem(BlockRegistry.TEA_CAULDRON, new Properties().group(Main.TS_GROUP))
 			.setRegistryName(Main.MODID, "tea_cauldron");

@@ -8,11 +8,13 @@ import cn.mcmod.tea_sorcerer.register.BlockRegistry;
 import cn.mcmod.tea_sorcerer.register.EntityRegistry;
 import cn.mcmod.tea_sorcerer.register.ItemRegistry;
 import cn.mcmod.tea_sorcerer.register.MainRegistry;
+import cn.mcmod.tea_sorcerer.tea.RenderTileEntityPlate;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -53,6 +55,10 @@ public class Main {
     	RenderTypeLookup.setRenderLayer(BlockRegistry.marguerite, RenderType.getCutoutMipped());
      	RenderTypeLookup.setRenderLayer(BlockRegistry.radiata, RenderType.getCutoutMipped());
      	RenderTypeLookup.setRenderLayer(BlockRegistry.sambac, RenderType.getCutoutMipped());
+     	
+     	ClientRegistry.bindTileEntityRenderer(BlockRegistry.PLATE_TE, (tileEntityRendererDispatcher -> {
+            return new RenderTileEntityPlate(tileEntityRendererDispatcher);
+        }));
      	
      	RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.MATCHA_BEAM,  (EntityRendererManager manager) -> {
             return new MatchaBeamRender(manager);
