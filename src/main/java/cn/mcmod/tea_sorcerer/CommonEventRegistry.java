@@ -44,7 +44,7 @@ public class CommonEventRegistry {
 				});
 			}
 			if(!player.world.isRemote){
-				if(player.getHealth() < 4 && player.isLiving()){
+				if(player.getHealth() < 4){
 					if(player.getHeldItem(Hand.MAIN_HAND).getItem()==ItemRegistry.flower_tea_sign){
 						player.getHeldItem(Hand.MAIN_HAND).shrink(1);
 						player.heal(player.getMaxHealth());
