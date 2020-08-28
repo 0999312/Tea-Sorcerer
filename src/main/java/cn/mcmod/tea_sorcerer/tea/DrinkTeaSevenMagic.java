@@ -28,7 +28,7 @@ public class DrinkTeaSevenMagic extends DrinkTeaBase {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
 		if(!worldIn.isRemote){
 			PlayerEntity playerIn = entityLiving instanceof PlayerEntity ? (PlayerEntity) entityLiving : null;
-	        if (playerIn == null || !playerIn.abilities.isCreativeMode) {
+	        if (playerIn == null) {
 	        	return super.onItemUseFinish(stack, worldIn, entityLiving);
 	        }
 			LazyOptional<ISpiritCapability> Cap = playerIn.getCapability(CapabilityRegistry.SPIRIT_CAPABILITY);
