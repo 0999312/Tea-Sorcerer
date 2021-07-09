@@ -1,5 +1,6 @@
-package cn.mcmod.tea_sorcerer.item;
+package cn.mcmod.tea_sorcerer.item.magic;
 
+import cn.mcmod.tea_sorcerer.Main;
 import cn.mcmod.tea_sorcerer.capability.CapabilityRegistry;
 import cn.mcmod.tea_sorcerer.capability.ISpiritCapability;
 import cn.mcmod.tea_sorcerer.event.EventUseMagic;
@@ -15,9 +16,8 @@ import net.minecraftforge.common.util.LazyOptional;
 
 public class ScrollMagicInfo extends Item {
 
-	public ScrollMagicInfo(Properties p_i48487_1_) {
-		super(p_i48487_1_);
-		// TODO Auto-generated constructor stub
+	public ScrollMagicInfo() {
+		super(new Item.Properties().stacksTo(1).tab(Main.TEA_GROUP));
 	}
 	
 	@Override

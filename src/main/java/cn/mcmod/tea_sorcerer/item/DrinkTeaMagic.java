@@ -14,4 +14,5 @@ public class DrinkTeaMagic extends ItemDrinkBase {
 	public boolean isFoil(ItemStack p_77636_1_) {
 		return true;
 	}
+	
 }

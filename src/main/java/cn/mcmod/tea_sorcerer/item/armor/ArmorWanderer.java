@@ -7,20 +7,18 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class ArmorWanderer extends ArmorItem {
 
-	public ArmorWanderer(IArmorMaterial p_i48534_1_, EquipmentSlotType p_i48534_2_, Properties p_i48534_3_) {
-		super(p_i48534_1_, p_i48534_2_, p_i48534_3_);
+	public ArmorWanderer(EquipmentSlotType p_i48534_2_, Properties p_i48534_3_) {
+		super(TeaArmorMaterial.WANDERER, p_i48534_2_, p_i48534_3_);
 	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack,
 			EquipmentSlotType armorSlot, A _default) {
-		
 		return (A) ClientUtil.getArmorModelFromJSON(new ResourceLocation(Versions.MODID, "models/armor/wanderer_model.json"), armorSlot);
 	}
 	@Override

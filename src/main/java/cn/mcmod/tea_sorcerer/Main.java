@@ -16,7 +16,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import cn.mcmod.tea_sorcerer.block.BlockRegister;
+import cn.mcmod.tea_sorcerer.client.particle.ParticleRegister;
 import cn.mcmod.tea_sorcerer.effect.EffectRegister;
+import cn.mcmod.tea_sorcerer.entity.EntityRegister;
 import cn.mcmod.tea_sorcerer.item.ItemRegister;
 import cn.mcmod_mmf.mmlib.utils.ClientUtil;
 
@@ -51,6 +53,8 @@ public class Main {
 		ItemRegister.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		BlockRegister.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		EffectRegister.EFFECTS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		EntityRegister.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ParticleRegister.PARTICLE_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

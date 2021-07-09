@@ -4,6 +4,7 @@ import cn.mcmod.tea_sorcerer.Versions;
 import cn.mcmod.tea_sorcerer.capability.CapabilityRegistry;
 import cn.mcmod.tea_sorcerer.capability.ISpiritCapability;
 import cn.mcmod.tea_sorcerer.capability.SpiritCapabilityProvider;
+import cn.mcmod.tea_sorcerer.effect.EffectRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -31,12 +32,19 @@ public class CommonEventHandler {
 		if (event.getEntityLiving() instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) event.getEntityLiving();
 			LazyOptional<ISpiritCapability> SpiritCap = player.getCapability(CapabilityRegistry.SPIRIT_CAPABILITY);
+			
 			if (SpiritCap.isPresent()) {
 				SpiritCap.ifPresent((newCap) -> {
 					if (newCap.getLastActionTimer() != 0)
 						newCap.setLastActionTimer(newCap.getLastActionTimer() - 1);
-					else if (newCap.getLastActionTimer() == 0 && newCap.getSpiritAmount() < newCap.getMaxSpiritAmount())
-						newCap.setSpiritAmount(newCap.getSpiritAmount() + 1);
+					else if (newCap.getLastActionTimer() == 0 && newCap.getSpiritAmount() < newCap.getMaxSpiritAmount()) {
+						int amount = 1;
+			            if (player.getEffect(EffectRegister.MAGIC_INCREASE.get()) != null){
+			            	amount = player.getEffect(EffectRegister.MAGIC_INCREASE.get()).getAmplifier() * 5;
+			            }
+							
+						newCap.setSpiritAmount(newCap.getSpiritAmount() + amount);
+					}
 				});
 			}
 		}
