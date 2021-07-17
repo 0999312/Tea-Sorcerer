@@ -78,7 +78,7 @@ public class CommonEventHandler {
 		if (SpiritCap.isPresent()) {
 			SpiritCap.ifPresent((newCap) -> {
 				if (newCap.getSpiritLevel() < event.spirit_level){
-					player.hurt(new DamageSource("use_higher_level_spirit"), 4F);
+					player.hurt(new DamageSource("use_higher_level_spirit"), 16F);
 					event.setCanceled(true);
 				}
 				if (newCap.getLastActionTimer() != 0){

@@ -1,0 +1,12 @@
+{
+   "spellcard" : {
+      "subtitle" : "tea_sorcerer.sound.spellcard",
+      "replace" : "true",
+      "sounds" : [
+         {
+            "name" : "tea_sorcerer:spellcard",
+            "stream" : true
+         }
+      ]
+   }
+}

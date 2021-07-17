@@ -9,13 +9,14 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class ItemLaserDanmaku extends ItemMagicBase {
 
 	public ItemLaserDanmaku() {
 		super(new Item.Properties().stacksTo(1).tab(Main.TEA_GROUP));
-		this.setSpiritAmonut(500);
+		this.setSpiritAmonut(100);
 		this.setSpiritLevel(1);
 		this.setActionTimer(25);
 	}
@@ -32,7 +33,7 @@ public class ItemLaserDanmaku extends ItemMagicBase {
 		danmaku.setMaxTick(10);
 		danmaku.shootFromRotation(playerIn, playerIn.xRot , playerIn.yRot, 0F, 5F, 0F);
 		worldIn.addFreshEntity(danmaku);
-		
+		worldIn.playSound(null, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundEvents.SNOWBALL_THROW, playerIn.getSoundSource(), 1.0f, 1.0f);
 		return true;
 	}
 

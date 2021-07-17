@@ -20,6 +20,7 @@ import cn.mcmod.tea_sorcerer.client.particle.ParticleRegister;
 import cn.mcmod.tea_sorcerer.effect.EffectRegister;
 import cn.mcmod.tea_sorcerer.entity.EntityRegister;
 import cn.mcmod.tea_sorcerer.item.ItemRegister;
+import cn.mcmod.tea_sorcerer.sound.SoundRegister;
 import cn.mcmod_mmf.mmlib.utils.ClientUtil;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -55,6 +56,7 @@ public class Main {
 		EffectRegister.EFFECTS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		EntityRegister.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ParticleRegister.PARTICLE_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+		SoundRegister.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

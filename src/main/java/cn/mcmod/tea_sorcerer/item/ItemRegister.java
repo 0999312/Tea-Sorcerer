@@ -6,6 +6,7 @@ import cn.mcmod.tea_sorcerer.effect.EffectRegister;
 import cn.mcmod.tea_sorcerer.item.armor.ArmorWanderer;
 import cn.mcmod.tea_sorcerer.item.magic.ItemLaserDanmaku;
 import cn.mcmod.tea_sorcerer.item.magic.ItemLeafDanmaku;
+import cn.mcmod.tea_sorcerer.item.magic.ItemSpellCard;
 import cn.mcmod.tea_sorcerer.item.magic.ScrollMagicInfo;
 import cn.mcmod_mmf.mmlib.item.ItemDrinkBase;
 import cn.mcmod_mmf.mmlib.item.info.FoodInfo;
@@ -92,7 +93,8 @@ public class ItemRegister {
 			ItemLeafDanmaku::new);
 	public static final RegistryObject<Item> TEST_DANMAKU2 = ITEMS.register("beam_danmaku_magic_book",
 			ItemLaserDanmaku::new);
-
+	public static final RegistryObject<Item> TEST_SPELL = ITEMS.register("spell_test",
+			ItemSpellCard::new);
 
 	public static final RegistryObject<Item> GREEN_TEA = ITEMS.register("green_tea_drink",
 			() -> new ItemDrinkBase(new Item.Properties().tab(Main.TEA_GROUP).craftRemainder(cup.get()),

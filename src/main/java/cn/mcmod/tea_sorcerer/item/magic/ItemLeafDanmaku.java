@@ -8,13 +8,14 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class ItemLeafDanmaku extends ItemMagicBase {
 
 	public ItemLeafDanmaku() {
 		super(new Item.Properties().stacksTo(1).tab(Main.TEA_GROUP));
-		this.setSpiritAmonut(200);
+		this.setSpiritAmonut(50);
 		this.setSpiritLevel(1);
 		this.setActionTimer(10);
 	}
@@ -32,6 +33,7 @@ public class ItemLeafDanmaku extends ItemMagicBase {
 			danmaku.shootFromRotation(playerIn, playerIn.xRot , playerIn.yRot +(float) MathUtil.sinValueIn(15F, i), 0, 2F, 5F);
 			worldIn.addFreshEntity(danmaku);
 		}
+		worldIn.playSound(null, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundEvents.SNOWBALL_THROW, playerIn.getSoundSource(), 1.0f, 1.0f);
 		return true;
 	}
 
