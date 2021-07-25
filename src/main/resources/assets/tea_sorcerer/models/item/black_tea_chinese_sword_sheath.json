@@ -1,0 +1,7 @@
+{
+  "parent": "chinese_sword:item/chinese_sword_sheath",
+  "textures": {
+    "0": "tea_sorcerer:models/black_tea_sword",
+    "1": "minecraft:block/dark_oak_log"
+  }
+}

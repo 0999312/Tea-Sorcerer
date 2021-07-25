@@ -4,18 +4,8 @@ import java.util.Random;
 
 public enum DanmakuColor {
 
-    RED(0xff0000),
-    ORANGE(0xff7f00),
-    YELLOW(0xfeff00),
-    LIME(0x7fff00),
-    LIGHT_GREEN(0x00ff00),
-    GREEN(0x00ff7f),
-    CYAN(0x1dfeff),
-    LIGHT_BLUE(0x007fff),
-    BLUE(0x0000ff),
-    PURPLE(0x7f00ff),
-    MAGENTA(0xff00fe),
-    PINK(0xff007f),
+    RED(0xff0000), ORANGE(0xff7f00), YELLOW(0xfeff00), LIME(0x7fff00), LIGHT_GREEN(0x00ff00), GREEN(0x00ff7f),
+    CYAN(0x1dfeff), LIGHT_BLUE(0x007fff), BLUE(0x0000ff), PURPLE(0x7f00ff), MAGENTA(0xff00fe), PINK(0xff007f),
     GRAY(0x8c8c8c);
 
     private final int rgb;

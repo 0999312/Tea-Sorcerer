@@ -11,31 +11,32 @@ import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 
 public class SpiritCapabilityProvider implements ICapabilityProvider, INBTSerializable<CompoundNBT> {
-	private ISpiritCapability spiritCapability;
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		return cap == CapabilityRegistry.SPIRIT_CAPABILITY ? LazyOptional.of(() -> {
-			return this.getOrCreateCapability();
-		}).cast() : LazyOptional.empty();
-	}
+    private ISpiritCapability spiritCapability;
 
-	@Nonnull
-	ISpiritCapability getOrCreateCapability() {
-		if (spiritCapability == null) {
-			this.spiritCapability = new SpiritCapability(1,1000,1000);
-		}
-		return this.spiritCapability;
-	}
+    @Nonnull
+    @Override
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+        return cap == CapabilityRegistry.SPIRIT_CAPABILITY ? LazyOptional.of(() -> {
+            return this.getOrCreateCapability();
+        }).cast() : LazyOptional.empty();
+    }
 
-	@Override
-	public CompoundNBT serializeNBT() {
-		return getOrCreateCapability().serializeNBT();
-	}
+    @Nonnull
+    ISpiritCapability getOrCreateCapability() {
+        if (spiritCapability == null) {
+            this.spiritCapability = new SpiritCapability(1, 1000, 1000);
+        }
+        return this.spiritCapability;
+    }
 
-	@Override
-	public void deserializeNBT(CompoundNBT nbt) {
-		getOrCreateCapability().deserializeNBT(nbt);
-	}
+    @Override
+    public CompoundNBT serializeNBT() {
+        return getOrCreateCapability().serializeNBT();
+    }
+
+    @Override
+    public void deserializeNBT(CompoundNBT nbt) {
+        getOrCreateCapability().deserializeNBT(nbt);
+    }
 
 }

@@ -18,19 +18,23 @@ import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3f;
 
 public class RendererBasicDanmaku extends EntityRenderer<EntityBasicDanmaku> {
-    private static final ResourceLocation DANMAKU_TEXTURE = new ResourceLocation(Versions.MODID, "textures/entity/danmaku.png");
+    private static final ResourceLocation DANMAKU_TEXTURE = new ResourceLocation(Versions.MODID,
+            "textures/entity/danmaku.png");
     private static final RenderType RENDER_TYPE = RenderType.itemEntityTranslucentCull(DANMAKU_TEXTURE);
 
     public RendererBasicDanmaku(EntityRendererManager renderManager) {
         super(renderManager);
     }
 
-    private static void vertex(IVertexBuilder bufferIn, Matrix4f pose, Matrix3f normal, double x, double y, double texU, double texV, int packedLight) {
-        bufferIn.vertex(pose, (float) x, (float) y, 0.0F).color(255, 255, 255, 255).uv((float) texU, (float) texV).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(packedLight).normal(normal, 0.0F, 1.0F, 0.0F).endVertex();
+    private static void vertex(IVertexBuilder bufferIn, Matrix4f pose, Matrix3f normal, double x, double y, double texU,
+            double texV, int packedLight) {
+        bufferIn.vertex(pose, (float) x, (float) y, 0.0F).color(255, 255, 255, 255).uv((float) texU, (float) texV)
+                .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(packedLight).normal(normal, 0.0F, 1.0F, 0.0F).endVertex();
     }
 
     @Override
-    public void render(EntityBasicDanmaku entity, float entityYaw, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer bufferIn, int packedLightIn) {
+    public void render(EntityBasicDanmaku entity, float entityYaw, float partialTicks, MatrixStack matrixStack,
+            IRenderTypeBuffer bufferIn, int packedLightIn) {
         // 获取相关数据
         DanmakuColor color = entity.getColor();
         DanmakuType type = entity.getDanmakuType();
@@ -53,10 +57,14 @@ public class RendererBasicDanmaku extends EntityRenderer<EntityBasicDanmaku> {
         Matrix4f pose = matrixStackLast.pose();
         Matrix3f normal = matrixStackLast.normal();
 
-        vertex(buffer, pose, normal, -type.getSize(), type.getSize(), (startU + 0) / width, (startV + 0) / length, packedLightIn);
-        vertex(buffer, pose, normal, -type.getSize(), -type.getSize(), (startU + 0) / width, (startV + 32) / length, packedLightIn);
-        vertex(buffer, pose, normal, type.getSize(), -type.getSize(), (startU + 32) / width, (startV + 32) / length, packedLightIn);
-        vertex(buffer, pose, normal, type.getSize(), type.getSize(), (startU + 32) / width, (startV + 0) / length, packedLightIn);
+        vertex(buffer, pose, normal, -type.getSize(), type.getSize(), (startU + 0) / width, (startV + 0) / length,
+                packedLightIn);
+        vertex(buffer, pose, normal, -type.getSize(), -type.getSize(), (startU + 0) / width, (startV + 32) / length,
+                packedLightIn);
+        vertex(buffer, pose, normal, type.getSize(), -type.getSize(), (startU + 32) / width, (startV + 32) / length,
+                packedLightIn);
+        vertex(buffer, pose, normal, type.getSize(), type.getSize(), (startU + 32) / width, (startV + 0) / length,
+                packedLightIn);
         matrixStack.popPose();
     }
 

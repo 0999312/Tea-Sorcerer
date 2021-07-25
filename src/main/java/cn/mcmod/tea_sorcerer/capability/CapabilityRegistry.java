@@ -14,22 +14,23 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = Versions.MODID)
 public class CapabilityRegistry {
-	@CapabilityInject(ISpiritCapability.class)
-	public static Capability<ISpiritCapability> SPIRIT_CAPABILITY;
+    @CapabilityInject(ISpiritCapability.class)
+    public static Capability<ISpiritCapability> SPIRIT_CAPABILITY;
 
-	@SubscribeEvent
-	public static void onCapabilityRegistry(FMLCommonSetupEvent event) {
-		CapabilityManager.INSTANCE.register(ISpiritCapability.class, new Capability.IStorage<ISpiritCapability>() {
-			@Nullable
-			@Override
-			public INBT writeNBT(Capability<ISpiritCapability> capability, ISpiritCapability instance, Direction side) {
-				return null;
-			}
+    @SubscribeEvent
+    public static void onCapabilityRegistry(FMLCommonSetupEvent event) {
+        CapabilityManager.INSTANCE.register(ISpiritCapability.class, new Capability.IStorage<ISpiritCapability>() {
+            @Nullable
+            @Override
+            public INBT writeNBT(Capability<ISpiritCapability> capability, ISpiritCapability instance, Direction side) {
+                return null;
+            }
 
-			@Override
-			public void readNBT(Capability<ISpiritCapability> capability, ISpiritCapability instance, Direction side, INBT nbt) {
+            @Override
+            public void readNBT(Capability<ISpiritCapability> capability, ISpiritCapability instance, Direction side,
+                    INBT nbt) {
 
-			}
-		}, () -> null);
-	}
+            }
+        }, () -> null);
+    }
 }

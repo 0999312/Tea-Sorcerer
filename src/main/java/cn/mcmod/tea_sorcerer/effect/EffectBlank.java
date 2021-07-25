@@ -5,8 +5,8 @@ import net.minecraft.potion.EffectType;
 
 public class EffectBlank extends Effect {
 
-	protected EffectBlank(EffectType p_i50391_1_, int p_i50391_2_) {
-		super(p_i50391_1_, p_i50391_2_);
-	}
+    protected EffectBlank(EffectType p_i50391_1_, int p_i50391_2_) {
+        super(p_i50391_1_, p_i50391_2_);
+    }
 
 }

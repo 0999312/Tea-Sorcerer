@@ -1,0 +1,14 @@
+{
+  "parent": "chinese_sword:item/chinese_sword",
+  "textures": {
+    "0": "tea_sorcerer:models/black_tea_sword"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:blocking": 1.0
+      },
+      "model": "tea_sorcerer:item/black_tea_chinese_sword_blocking"
+    }
+  ]
+}

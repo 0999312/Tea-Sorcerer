@@ -1,0 +1,6 @@
+{
+  "parent": "chinese_sword:item/ancient_sword_blocking",
+  "textures": {
+    "0": "tea_sorcerer:models/black_tea_sword"
+  }
+}

@@ -16,25 +16,26 @@ import net.minecraftforge.common.util.LazyOptional;
 
 public class ScrollMagicInfo extends Item {
 
-	public ScrollMagicInfo() {
-		super(new Item.Properties().stacksTo(1).tab(Main.TEA_GROUP));
-	}
-	
-	@Override
-	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
-		if(worldIn.isClientSide)
-			return super.use(worldIn, playerIn, handIn);
-		boolean result = MinecraftForge.EVENT_BUS.post(new EventUseMagic(playerIn, 0, 0));
-		if(result)
-			return super.use(worldIn, playerIn, handIn);
-		LazyOptional<ISpiritCapability> Cap = playerIn.getCapability(CapabilityRegistry.SPIRIT_CAPABILITY);
+    public ScrollMagicInfo() {
+        super(new Item.Properties().stacksTo(1).tab(Main.TEA_GROUP));
+    }
+
+    @Override
+    public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        if (worldIn.isClientSide)
+            return super.use(worldIn, playerIn, handIn);
+        boolean result = MinecraftForge.EVENT_BUS.post(new EventUseMagic(playerIn, 0, 0));
+        if (result)
+            return super.use(worldIn, playerIn, handIn);
+        LazyOptional<ISpiritCapability> Cap = playerIn.getCapability(CapabilityRegistry.SPIRIT_CAPABILITY);
         Cap.ifPresent((l) -> {
-        		l.setLastActionTimer(10);
-        		playerIn.sendMessage(new TranslationTextComponent("tea_sorcerer.spirit.info.level",l.getSpiritLevel()), playerIn.getUUID());
-        		playerIn.sendMessage(new TranslationTextComponent("tea_sorcerer.spirit.info.amount",l.getSpiritAmount()), playerIn.getUUID());
-        	}
-        );
-		return super.use(worldIn, playerIn, handIn);
-	}
+            l.setLastActionTimer(10);
+            playerIn.sendMessage(new TranslationTextComponent("tea_sorcerer.spirit.info.level", l.getSpiritLevel()),
+                    playerIn.getUUID());
+            playerIn.sendMessage(new TranslationTextComponent("tea_sorcerer.spirit.info.amount", l.getSpiritAmount()),
+                    playerIn.getUUID());
+        });
+        return super.use(worldIn, playerIn, handIn);
+    }
 
 }
