@@ -12,7 +12,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.LazyOptional;
@@ -52,11 +51,6 @@ public class BlackTeaFeature extends WeaponFeature {
                 l.setSpiritAmount(l.getSpiritAmount() - 100);
             l.setLastActionTimer(1);
         });
-    }
-
-    @Override
-    public void use(World arg0, PlayerEntity arg1, Hand arg2) {
-
     }
 
 }
