@@ -14,6 +14,8 @@ public class BlockRegister {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
             Versions.MODID);
     public static final RegistryObject<Block> TEA_CROP = BLOCKS.register("tea_tree", TeaCrop::new);
+    
+    public static final RegistryObject<Block> TEA_POT = BLOCKS.register("tea_pot", TeaPotBlock::new);
 
     public static final RegistryObject<Block> marguerite = BLOCKS.register("marguerite", () -> new FlowerBlock(
             Effects.REGENERATION, 8,

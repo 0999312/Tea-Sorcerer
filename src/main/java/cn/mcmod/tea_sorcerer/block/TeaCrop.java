@@ -39,7 +39,6 @@ public class TeaCrop extends CropsBlock {
         return super.getBonemealAgeIncrease(levelIn) / 3;
     }
 
-
     @Override
     protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
         builder.add(TEA_AGE);

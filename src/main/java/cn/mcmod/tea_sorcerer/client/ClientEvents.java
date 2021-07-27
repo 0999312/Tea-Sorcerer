@@ -36,18 +36,17 @@ public class ClientEvents {
             RenderTypeLookup.setRenderLayer(BlockRegister.marguerite.get(), RenderType.cutoutMipped());
             RenderTypeLookup.setRenderLayer(BlockRegister.radiata.get(), RenderType.cutoutMipped());
             RenderTypeLookup.setRenderLayer(BlockRegister.sambac.get(), RenderType.cutoutMipped());
+            RenderTypeLookup.setRenderLayer(BlockRegister.TEA_POT.get(), RenderType.cutoutMipped());
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegister.LEAF_DANMAKU.get(), RenderLeafDanmaku::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegister.BASIC_DANMAKU.get(), RendererBasicDanmaku::new);
-    }
-
-    @SubscribeEvent
-    public static void setupClient(final FMLClientSetupEvent event) {
+        
         if(ModList.get().isLoaded("chinese_sword"))
         event.enqueueWork(() -> {
             // 进行批量注册Item Property Override
             ChineseSwordRegistry.ITEMS.getEntries().forEach(ClientEvents::registerBlockingProperties);
         });
+        
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegister.LEAF_DANMAKU.get(), RenderLeafDanmaku::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegister.BASIC_DANMAKU.get(), RendererBasicDanmaku::new);
     }
 
     private static void registerBlockingProperties(RegistryObject<Item> item) {

@@ -43,6 +43,9 @@ public class ItemRegister {
     
     public static final RegistryObject<Item> sambac = ITEMS.register("sambac",
             () -> new BlockItem(BlockRegister.sambac.get(), new Item.Properties().tab(Main.TEA_GROUP)));
+    
+    public static final RegistryObject<Item> TEA_POT = ITEMS.register("tea_pot",
+            () -> new BlockItem(BlockRegister.TEA_POT.get(), new Item.Properties().tab(Main.TEA_GROUP)));
 
     public static final RegistryObject<Item> green_tea_leaves = ITEMS.register("green_tea_leaves",
             () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
