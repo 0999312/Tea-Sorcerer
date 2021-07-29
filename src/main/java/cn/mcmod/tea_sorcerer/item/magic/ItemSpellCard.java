@@ -41,7 +41,7 @@ public class ItemSpellCard extends ItemMagicBase {
         playerIn.sendMessage(new TranslationTextComponent(getDescriptionId()), playerIn.getUUID());
 //        playerIn.playSound(, 1.0f, 0.8f);
         worldIn.playSound(null, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundRegister.SPELLCARD.get(),
-                playerIn.getSoundSource(), 1.0f, 1.0f);
+                playerIn.getSoundSource(), 0.75f, 1.0f);
         return true;
     }
 

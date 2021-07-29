@@ -109,5 +109,7 @@
   "tea_sorcerer.error.418" : "HTTP 418 I'm a teapot",
   "effect.tea_sorcerer.magic_increase" : "Magic Increase",
   "effect.tea_sorcerer.immortal" : "Immortal",
-  "effect.tea_sorcerer.fresh" : "Fresh"
+  "effect.tea_sorcerer.fresh" : "Fresh",
+  "tier.chinese_sword.black_tea" : "Magical Tea Steel",
+  "tooltip.chinese_sword.feature.black_tea_steel" : "The increased magic power can bring higher attack."
 }

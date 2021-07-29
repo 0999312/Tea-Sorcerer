@@ -109,5 +109,7 @@
    "tea_sorcerer.error.418" : "HTTP 418 I'm a teapot",
    "effect.tea_sorcerer.magic_increase" : "魔力增幅",
    "effect.tea_sorcerer.immortal" : "不死",
-   "effect.tea_sorcerer.fresh" : "清新"
+   "effect.tea_sorcerer.fresh" : "清新",
+   "tier.chinese_sword.black_tea" : "魔力茶钢",
+   "tooltip.chinese_sword.feature.black_tea_steel" : "增幅的魔力能够带来更高的攻击力。"
 }
