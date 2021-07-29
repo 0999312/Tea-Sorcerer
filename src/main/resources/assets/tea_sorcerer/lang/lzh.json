@@ -1,0 +1,8 @@
+{
+	"item.tea_sorcerer.black_tea_ancient_sword" : "漢制茶鋼劍",
+	"item.tea_sorcerer.black_tea_chinese_sword" : "明制茶鋼劍",
+	"item.tea_sorcerer.black_tea_ancient_sword_sheath" : "漢制茶鋼劍鞘",
+	"item.tea_sorcerer.black_tea_chinese_sword_sheath" : "明制茶鋼劍鞘",
+	"tier.chinese_sword.black_tea" : "蕴魔茶鋼",
+	"tooltip.chinese_sword.feature.black_tea_steel" : "以法力注此劍，求其威力加增也。"
+}

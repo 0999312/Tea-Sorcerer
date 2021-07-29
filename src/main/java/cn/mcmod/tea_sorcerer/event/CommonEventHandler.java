@@ -5,8 +5,10 @@ import cn.mcmod.tea_sorcerer.capability.CapabilityRegistry;
 import cn.mcmod.tea_sorcerer.capability.ISpiritCapability;
 import cn.mcmod.tea_sorcerer.capability.SpiritCapabilityProvider;
 import cn.mcmod.tea_sorcerer.effect.EffectRegister;
+import cn.mcmod.tea_sorcerer.item.FlowerTeaSigh;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -42,12 +44,37 @@ public class CommonEventHandler {
                         if (player.getEffect(EffectRegister.MAGIC_INCREASE.get()) != null) {
                             amount = player.getEffect(EffectRegister.MAGIC_INCREASE.get()).getAmplifier() * 5;
                         }
-
                         newCap.setSpiritAmount(newCap.getSpiritAmount() + amount);
                     }
                 });
             }
+
+            if (!player.level.isClientSide) {
+                if (player.getHealth() < 4) {
+                    ItemStack sigh = findFlowerTeaSigh(player);
+                    if (!sigh.isEmpty()) {
+                        sigh.shrink(1);
+                        player.heal(player.getMaxHealth());
+                        player.level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BREAK, player.getSoundSource(), 1.0f, 1.0f);
+                        player.level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_LEVELUP, player.getSoundSource(), 1.0f, 1.0f);
+                    }
+                }
+            }
         }
+    }
+
+    private static ItemStack findFlowerTeaSigh(PlayerEntity player) {
+        for (int i = 0; i < player.inventory.getMaxStackSize(); ++i) {
+            ItemStack itemstack = player.inventory.getItem(i);
+            if (isSigh(itemstack)) {
+                return itemstack;
+            }
+        }
+        return ItemStack.EMPTY;
+    }
+
+    private static boolean isSigh(ItemStack itemInHand) {
+        return itemInHand.getItem() instanceof FlowerTeaSigh;
     }
 
     @SubscribeEvent

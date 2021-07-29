@@ -47,6 +47,18 @@ public class ItemRegister {
     public static final RegistryObject<Item> TEA_POT = ITEMS.register("tea_pot",
             () -> new BlockItem(BlockRegister.TEA_POT.get(), new Item.Properties().tab(Main.TEA_GROUP)));
 
+    public static final RegistryObject<Item> tea_leaves = ITEMS.register("tea_leaves",
+            () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
+    
+    public static final RegistryObject<Item> straw = ITEMS.register("straw",
+            () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
+    
+    public static final RegistryObject<Item> rice = ITEMS.register("rice",
+            () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
+    
+    public static final RegistryObject<Item> brown_rice = ITEMS.register("brown_rice",
+            () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
+    
     public static final RegistryObject<Item> green_tea_leaves = ITEMS.register("green_tea_leaves",
             () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
     public static final RegistryObject<Item> black_tea_leaves = ITEMS.register("black_tea_leaves",
@@ -129,6 +141,12 @@ public class ItemRegister {
     
     public static final RegistryObject<Item> LEAF_DANMAKU_BOOK = ITEMS.register("leaf_danmaku_magic_book",
             ItemLeafDanmaku::new);
+    
+    public static final RegistryObject<Item> tea_knife = ITEMS.register("tea_knife",
+            () -> new Item(new Item.Properties().tab(Main.TEA_GROUP)));
+    
+    public static final RegistryObject<Item> flower_tea_sign = ITEMS.register("flower_tea_sign",
+            FlowerTeaSigh::new);
     
     public static final RegistryObject<Item> BEAM_DANMAKU_BOOK = ITEMS.register("beam_danmaku_magic_book",
             ItemLaserDanmaku::new);
