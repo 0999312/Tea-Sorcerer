@@ -33,7 +33,7 @@ public class BlackTeaFeature extends WeaponFeature {
     }
 
     @Override
-    public void onLeftClickEntity(ItemStack stackIn, PlayerEntity player, Entity entity) {
+    public boolean onLeftClickEntity(ItemStack stackIn, PlayerEntity player, Entity entity) {
         boolean result = MinecraftForge.EVENT_BUS.post(new EventUseMagic(player, 0, 100));
         if (player.getEffect(EffectRegister.MAGIC_INCREASE.get()) != null) {
             if (!result) {
@@ -42,6 +42,7 @@ public class BlackTeaFeature extends WeaponFeature {
                 UseSpirit(player);
             }
         }
+        return false;
     }
     
     protected void UseSpirit(PlayerEntity playerIn) {

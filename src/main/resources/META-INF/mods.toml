@@ -65,6 +65,6 @@ Midoritake Bensei(青竹 文正), the Tea Sorcerer, with his "The Grimoire of Te
 [[dependencies.tea_sorcerer]]
     modId="chinese_sword"
     mandatory=false
-    versionRange="[1.0.6,)"
+    versionRange="[1.0.7,)"
     ordering="AFTER"
     side="BOTH"
